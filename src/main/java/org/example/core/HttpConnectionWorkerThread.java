@@ -29,7 +29,6 @@ public class HttpConnectionWorkerThread extends Thread {
             final String CRLF = "\n\r";
             String response = "HTTP/1.1 200 OK" + CRLF + "Content-Length" + html.getBytes().length + CRLF + CRLF + html + CRLF + CRLF;//status line
             outputStream.write(response.getBytes());
-
             LOGGER.info("processing finished");
         } catch (IOException e) {
             LOGGER.error("Problem with communication");
